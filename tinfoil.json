@@ -1,5 +1,5 @@
 {
     "files": ["GG url1", "sdmc:/url2", "http://url3"],
-    "directories": ["https://url1", "sdmc:/url2", "http://url3"],
+    "directories": ["https://e.cchi.me", "sdmc:/url2", "http://url3"],
     "success": "motd text here"
 }
