@@ -1,5 +1,5 @@
 {
-    "about": false,
+    "about": true,
     "atmosphere": false,
     "browser": true,
     "cfw": true,
