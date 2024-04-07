@@ -14,5 +14,5 @@
     "netsettings": true,
     "outdatedtitles": true,
     "pccolor": false,
-    "rebootpayload": false
+    "rebootpayload": true
 }
