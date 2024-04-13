@@ -3,9 +3,10 @@ wait={t=timer()while(timer()<(t+tw)){print()}}
 
 	color(0xFFA500);
 	p("Deleting old files that may cause conflict")
-	
+	p()
 	deldir("sd:/config/aio-switch-updater")
 	deldir("sd:/switch/aio-switch-updater")
+	delfile("sd:/switch/aio-switch-updater.nro")
 	delfile("sd:/bootloader/hekate_ipl.ini")
 	movefile("sd:/bootloader/hekate_ipl" "sd:/bootloader/hekate_ipl.ini")
 	delfile("sd:/config/8bit-updater/update.te")
