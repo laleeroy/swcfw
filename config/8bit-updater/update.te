@@ -1,5 +1,31 @@
+BLUE = 0x0000FF
+YELLOW = 0xFFFF00
+RED = 0xFF0000
+GREEN = 0x00FF00
+WHITE = 0xFFFFFF
+ORANGE = 0xFFA500
+VIOLET = 0x8F00FF
+
+p=println
 wait={t=timer()while(timer()<(t+tw)){print()}}
 
-		deldir("sd:/switch/aio-switch-updater");
-		deldir("sd:/config/aio-switch-updater");
-		delfile("sd:/config/8bit-updater/update.te");
+	color(0xFFA500);
+	p("Deleting old files that may cause conflict")
+	
+	deldir("sd:/config/aio-switch-updater")
+	wait(tw = 300)
+	deldir("sd:/switch/aio-switch-updater")
+	wait(tw = 300)
+	delfile("sd:/bootloader/hekate_ipl.ini")
+	wait(tw = 300)
+	movefile("sd:/bootloader/hekate_ipl" "sd:/bootloader/hekate_ipl.ini")
+	wait(tw = 300)
+	delfile("sd:/config/8bit-updater/update.te")
+	wait(tw = 300)
+	
+	clear()
+	color(0xFFFF00);	
+	p("Update completed!")
+	p()
+	p("Rebooting")
+	wait(tw = 3000)
