@@ -1,0 +1,54 @@
+BLUE = 0x0000FF
+YELLOW = 0xFFFF00                                      
+RED = 0xFF0000
+GREEN = 0x00FF00                                       
+WHITE = 0xFFFFFF
+ORANGE = 0xFFA500
+VIOLET = 0x8F00FF
+
+p=println
+wait={t=timer()while(timer()<(t+tw)){print()}}
+
+	color(RED);
+	p("Deleting old files that may cause conflict")
+	p()	
+	if (fsexists("sd:/switch/tinfoil/icons.db")) {
+	movefile("sd:/switch/tinfoil/icons.db", "sd:/pacman/switch/tinfoil/icons.db")
+	}
+	deldir("sd:/atmosphere");
+	deldir("sd:/bootloader");
+	deldir("sd:/config");
+	deldir("sd:/switch");
+	deldir("sd:/SaltySD");
+	delfile("sd:/payload.bin");
+	delfile("sd:/exosphere.ini");
+	delfile("sd:/hbmenu.nro");
+	clear()
+
+	color(ORANGE);	
+	p("Copying new files")
+	p()	
+	copydir("sd:/pacman/atmosphere", "sd:/");
+	copydir("sd:/pacman/bootloader", "sd:/");
+	copydir("sd:/pacman/config", "sd:/");
+	copydir("sd:/pacman/switch", "sd:/");
+	copydir("sd:/pacman/SaltySD", "sd:/");
+	copyfile("sd:/pacman/payload.bin", "sd:/payload.bin");
+	copyfile("sd:/pacman/exosphere.ini", "sd:/exosphere.ini");
+	copyfile("sd:/pacman/hbmenu.nro", "sd:/hbmenu.nro");
+	clear()
+
+	color(YELLOW);
+	p("Finishing touches")
+	p()
+	delfile("sd:/switch/daybreak.nro");
+	delfile("sd:/switch/reboot_to_payload.nro");
+	deldir("sd:/config/8bit-updater");
+	deldir("sd:/pacman");
+	clear()
+
+	color(GREEN);	
+	p("Update complete!")
+	p()
+	p("Rebooting")
+	wait(tw = 3000)
