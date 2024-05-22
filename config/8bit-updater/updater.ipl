@@ -10,6 +10,5 @@ updater2p=0
 bootprotect=0
 
 [8Bit-Updater]
-payload=/bootloader/payloads/updater.bin
-icon=/bootloader/res/updater/updater_icon.bmp
-logopath=/bootloader/res/updater/updater_logo.bmp
+payload=/pacman/config/8bit-updater/updater.bin
+logopath=/pacman/config/8bit-updater/updater.bmp

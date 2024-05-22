@@ -34,15 +34,12 @@ wait={t=timer()while(timer()<(t+tw)){print()}}
 	copydir("sd:/pacman/switch", "sd:/");
 	copydir("sd:/pacman/SaltySD", "sd:/");
 	copyfile("sd:/pacman/payload.bin", "sd:/payload.bin");
-	copyfile("sd:/pacman/exosphere.ini", "sd:/exosphere.ini");
 	copyfile("sd:/pacman/hbmenu.nro", "sd:/hbmenu.nro");
 	clear()
 
 	color(YELLOW);
 	p("Finishing touches")
 	p()
-	delfile("sd:/switch/daybreak.nro");
-	delfile("sd:/switch/reboot_to_payload.nro");
 	deldir("sd:/config/8bit-updater");
 	deldir("sd:/pacman");
 	clear()
