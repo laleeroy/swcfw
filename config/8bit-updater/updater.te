@@ -1,7 +1,7 @@
 BLUE = 0x0000FF
-YELLOW = 0xFFFF00                                      
+YELLOW = 0xFFFF00 
 RED = 0xFF0000
-GREEN = 0x00FF00                                       
+GREEN = 0x00FF00
 WHITE = 0xFFFFFF
 ORANGE = 0xFFA500
 VIOLET = 0x8F00FF
@@ -9,12 +9,20 @@ VIOLET = 0x8F00FF
 p=println
 wait={t=timer()while(timer()<(t+tw)){print()}}
 
-	color(RED);
-	p("Deleting old files that may cause conflict")
+	color(WHITE);
+	p("Making a backup of some files")
 	p()	
 	if (fsexists("sd:/switch/tinfoil/icons.db")) {
 	movefile("sd:/switch/tinfoil/icons.db", "sd:/pacman/switch/tinfoil/icons.db")
 	}
+	if (fsexists("sd:/bootloader/ini")) {
+	copydir("sd:/bootloader/ini", "sd:/pacman/bootloader/ini")
+	}
+	clear()
+
+	color(RED);
+	p("Deleting old files that may cause conflict")
+	p()	
 	deldir("sd:/atmosphere");
 	deldir("sd:/bootloader");
 	deldir("sd:/config");
