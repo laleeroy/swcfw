@@ -77,6 +77,12 @@ StatusMonitor() {
     $UNZIP_COMMAND $TMP_DIR/Status-Monitor-Overlay.zip -d $BUILD_DIR/
 }
 
+Ultrahand() {
+    download_url=$(curl -s https://api.github.com/repos/ppkantorski/Ultrahand-Overlay/releases/latest | jq -r ".assets[1].browser_download_url")
+    curl -O -L $download_url --output-dir $TMP_DIR
+    cp $TMP_DIR/ovlmenu.ovl -d $BUILD_DIR/$OVERLAY_DIR
+}
+
 mkdir $TMP_DIR
 mkdir -p $OVERLAY_DIR
 
@@ -94,5 +100,6 @@ SysModules
 Sys-Clk
 Emuiibo
 StatusMonitor
+Ultrahand
 
 rm -rf $TMP_DIR
