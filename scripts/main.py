@@ -10,7 +10,7 @@ import hekate_ipl
 
 if __name__ == '__main__':
 
-    json_file = "nx-links.json"
+    json_file = "updates.json"
     try:
         with open(json_file, "r") as old_file:
             out = json.load(old_file)
@@ -18,12 +18,8 @@ if __name__ == '__main__':
         out = {}
 
     modules = [
-        bootloaders.Bootloaders(),
         cfws.Cfws(),
-        hekate.Hekate(),
-        payloads.Payloads(),
-        firmwares.Firmwares(),
-        hekate_ipl.HekateIpl()
+        firmwares.Firmwares()
     ]
     for module in modules:
         if module.out == {}:

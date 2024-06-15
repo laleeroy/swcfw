@@ -1,0 +1,14 @@
+{
+    "cfws": {
+        "Atmosphere": {
+            "8BP Caldereta [Latest] - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
+            "8BP Bulalo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
+            "8BP Adobo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
+        }
+    },
+    "firmwares": {
+        "Firmware 18.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/18.1.0/Firmware.18.1.0.zip",
+        "Firmware 18.0.1": "https://github.com/THZoria/NX_Firmware/releases/download/18.0.1/Firmware.18.0.1.zip",
+        "Firmware 18.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/18.0.0/Firmware.18.0.0.zip"
+    }
+}
