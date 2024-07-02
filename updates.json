@@ -1,7 +1,8 @@
 {
     "cfws": {
         "Atmosphere": {
-            "8BP Caldereta [Latest] - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
+            "8BP Dinuguan [Latest] - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-d.zip",
+            "8BP Caldereta - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
             "8BP Bulalo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
             "8BP Adobo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
         }
