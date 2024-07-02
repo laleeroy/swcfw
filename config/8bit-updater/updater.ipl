@@ -1,0 +1,14 @@
+[config]                                   
+autoboot=1
+autoboot_list=0
+bootwait=3
+backlight=100
+noticker=1
+autohosoff=0
+autonogc=1
+updater2p=0
+bootprotect=0
+
+[8Bit-Updater]
+payload=/pacman/config/8bit-updater/updater.bin
+logopath=/pacman/config/8bit-updater/updater.bmp
