@@ -2,8 +2,8 @@ name: Create Release
 
 on:
   push:
-    tags:
-      - '*'
+    #    tags:
+    #  - '*'
 
 jobs:
   build:
@@ -15,7 +15,16 @@ jobs:
 
       - name: Extract tag first letter
         id: extract_tag
-        run: echo "first_letter=$(echo ${GITHUB_REF#refs/tags/} | cut -c1)" >> $GITHUB_ENV
+        run: |
+          TAG_NAME=${GITHUB_REF#refs/tags/}
+          FIRST_LETTER=$(echo $TAG_NAME | cut -c1)
+          echo "first_letter=${FIRST_LETTER}" >> $GITHUB_ENV
+          echo "tag_name=${TAG_NAME}" >> $GITHUB_ENV
+
+      - name: Print extracted values
+        run: |
+          echo "First letter: $FIRST_LETTER"
+          echo "Tag name: $TAG_NAME"
 
       - name: Create release
         id: create_release
@@ -23,10 +32,13 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref_name }}
-          release_name: Release ${{ github.ref_name }}
+          tag_name: ${{ env.tag_name }}
+          release_name: Release ${{ env.tag_name }}
           draft: false
           prerelease: false
+
+      - name: List files in the working directory
+        run: ls -al ./path/to/your/
 
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
