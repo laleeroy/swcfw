@@ -39,24 +39,36 @@ else:
     if 'Atmosphere' not in updates['cfws']:
         updates['cfws']['Atmosphere'] = {}
 
-    # Remove the "[Latest]" word from the existing entries and update them
+    # Current entries
     current_entries = updates['cfws']['Atmosphere']
-    updated_entries = {}
     
-    for key, value in current_entries.items():
-        # Remove "[Latest]" from key if it exists
-        new_key = key.replace('[Latest]', '').strip()
-        updated_entries[new_key] = value
+    # Check if the latest release is already present
+    latest_entry_exists = False
+    for key in current_entries:
+        if '[Latest]' in key and latest_download_url == current_entries[key]:
+            latest_entry_exists = True
+            break
 
-    # Create the new entry with dynamic naming
-    new_entry_name = f'8BP {latest_tag_name} - {latest_title} [Latest]'
-    updated_entries = {new_entry_name: latest_download_url, **updated_entries}
+    if not latest_entry_exists:
+        # Remove the "[Latest]" word from the existing entries and update them
+        updated_entries = {}
+        
+        for key, value in current_entries.items():
+            # Remove "[Latest]" from key if it exists
+            new_key = key.replace('[Latest]', '').strip()
+            updated_entries[new_key] = value
 
-    # Update the JSON with the new entries
-    updates['cfws']['Atmosphere'] = updated_entries
+        # Create the new entry with dynamic naming
+        new_entry_name = f'8BP {latest_tag_name} - {latest_title} [Latest]'
+        updated_entries = {new_entry_name: latest_download_url, **updated_entries}
 
-    # Save the updated content back to updates.json
-    with open(updates_file_path, 'w') as file:
-        json.dump(updates, file, indent=4)
+        # Update the JSON with the new entries
+        updates['cfws']['Atmosphere'] = updated_entries
 
-    print("updates.json has been updated with the latest release.")
+        # Save the updated content back to updates.json
+        with open(updates_file_path, 'w') as file:
+            json.dump(updates, file, indent=4)
+
+        print("updates.json has been updated with the latest release.")
+    else:
+        print("The latest release is already up-to-date in updates.json.")

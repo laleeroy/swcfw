@@ -1,10 +1,11 @@
 {
     "cfws": {
         "Atmosphere": {
-            "8BP Dinuguan [Latest] - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-d.zip",
-            "8BP Caldereta - Atmosphère 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
-            "8BP Bulalo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
-            "8BP Adobo - Atmosphère 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
+            "8BP 1.7.1 - Atmosph\u00e8re 1.7.1 [Latest]": "https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/atmosphere-1.7.1-master-39c201e37%2Bhbl-2.4.4%2Bhbmenu-3.6.0.zip",
+            "8BP Dinuguan  - Atmosph\u00e8re 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-d.zip",
+            "8BP Caldereta - Atmosph\u00e8re 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
+            "8BP Bulalo - Atmosph\u00e8re 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
+            "8BP Adobo - Atmosph\u00e8re 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
         }
     },
     "firmwares": {
