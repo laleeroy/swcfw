@@ -1,0 +1,37 @@
+name: Shop Update
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  push:
+    branches:
+      - tinfoil
+
+jobs:
+  update-json:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+
+      - name: Run update script
+        run: python shop-update.py
+
+      - name: Commit changes
+        run: |
+          git config --global user.name '8Bit Gamer [Bot]'
+          git config --global user.email '8bitgamer2024@gmail.com'
+          git add file.json
+          git commit -m 'Update file.json' || echo "No changes to commit"
+          git push
