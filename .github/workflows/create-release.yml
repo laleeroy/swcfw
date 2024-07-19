@@ -15,7 +15,7 @@ jobs:
 
       - name: Extract tag first letter
         id: extract_tag
-        run: echo "first_letter=${GITHUB_REF#refs/tags/}" | cut -c1 | tee -a $GITHUB_ENV
+        run: echo "first_letter=${GITHUB_REF#refs/tags/}"; echo "::set-output name=first_letter::$(echo ${GITHUB_REF#refs/tags/} | cut -c1)"
 
       - name: Create release
         id: create_release
@@ -35,5 +35,5 @@ jobs:
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: path/to/your/file.zip  # Replace with the actual path to your file
-          asset_name: swcfw-atmosphere-${{ env.first_letter }}.zip
+          asset_name: swcfw-atmosphere-${{ steps.extract_tag.outputs.first_letter }}.zip
           asset_content_type: application/zip
