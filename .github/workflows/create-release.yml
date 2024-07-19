@@ -2,8 +2,8 @@ name: Create Release
 
 on:
   push:
-    tags:
-      - '*'
+    #    tags:
+    #  - '*'
 
 jobs:
   build:
@@ -17,6 +17,9 @@ jobs:
         id: extract_tag
         run: echo "first_letter=$(echo ${GITHUB_REF#refs/tags/} | cut -c1)" >> $GITHUB_ENV
 
+      - name: List files in the working directory
+        run: pwd
+
       - name: Create release
         id: create_release
         uses: actions/create-release@v1
@@ -29,7 +32,6 @@ jobs:
           prerelease: false
 
       - name: Upload release asset
-         run: ls -al ./path/to/your/          
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
