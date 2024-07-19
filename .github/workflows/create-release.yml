@@ -28,10 +28,8 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: List files in the working directory
-         run: ls -al ./path/to/your/          
-
       - name: Upload release asset
+         run: ls -al ./path/to/your/          
         uses: actions/upload-release-asset@v1
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
