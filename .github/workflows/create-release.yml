@@ -34,6 +34,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./path/to/your/file.zip  # Replace with the actual path to your file
+          asset_path: file.zip  # Replace with the actual path to your file
           asset_name: swcfw-atmosphere-${{ env.first_letter }}.zip
           asset_content_type: application/zip
