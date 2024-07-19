@@ -28,6 +28,9 @@ jobs:
           draft: false
           prerelease: false
 
+      - name: List files in the working directory
+         run: ls -al ./path/to/your/          
+
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
