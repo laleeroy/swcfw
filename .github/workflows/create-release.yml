@@ -2,8 +2,8 @@ name: Create Release
 
 on:
   push:
-    #    tags:
-    #  - '*'
+    tags:
+      - '*'  # Trigger on all tag pushes
 
 jobs:
   build:
@@ -16,12 +16,21 @@ jobs:
       - name: Extract tag first letter
         id: extract_tag
         run: |
+          # Extract the tag name and its first letter
           TAG_NAME="${GITHUB_REF#refs/tags/}"
           FIRST_LETTER="$(echo ${TAG_NAME} | cut -c1)"
-          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
           echo "FIRST_LETTER=${FIRST_LETTER}" >> $GITHUB_ENV
+          echo "TAG_NAME=${TAG_NAME}" >> $GITHUB_ENV
           echo "First letter: ${FIRST_LETTER}"
           echo "Tag name: ${TAG_NAME}"
+
+      - name: Find the first-ever tag
+        id: get_first_tag
+        run: |
+          # Find the first-ever tag (alphabetically) - customize as needed
+          FIRST_TAG=$(git tag --sort=version:refname | head -n 1)
+          echo "FIRST_TAG=${FIRST_TAG}" >> $GITHUB_ENV
+          echo "First-ever tag: ${FIRST_TAG}"
 
       - name: Create release
         id: create_release
@@ -29,8 +38,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.MY_GITHUB_TOKEN }}
         with:
-          tag_name: ${{ env.TAG_NAME }}
-          release_name: Release ${{ env.TAG_NAME }}
+          tag_name: ${{ env.FIRST_TAG }}
+          release_name: Release ${{ env.FIRST_TAG }}
           draft: false
           prerelease: false
 
@@ -45,4 +54,4 @@ jobs:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
           asset_path: file.zip  # Replace with the actual path to your file
           asset_name: swcfw-atmosphere-${{ env.FIRST_LETTER }}.zip
-          asset_content_type: application/zip
+          asset_content_type: application/octet-stream
