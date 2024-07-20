@@ -21,6 +21,7 @@ jobs:
         ./update-hb.sh
         git config --global user.name '8Bit Gamer'
         git config --global user.email '8bitgamer2024@gmail.com'
+        git checkout atmosphere
         git add .
         git commit -m "HBs Update" || echo "No changes to commit"
         git push
