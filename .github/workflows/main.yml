@@ -1,0 +1,30 @@
+name: Zip and Update
+
+on:
+  push:
+    #    tags:
+    #  - '*'
+
+jobs:
+  zip-and-update:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up environment variables
+      run: echo "REPO_TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+    - name: Run update-hb script
+      run: |
+        ./update-hb.sh
+        git add .
+        git config --global user.name '8Bit Gamer'
+        git config --global user.email '8bitgamer2024@gmail.com'
+        git commit -m "HBs Update" || echo "No changes to commit"
+        git push"
+
+      - name: Run archive script
+        run: |
+          ./archive.sh ${{ env.REPO_TAG_NAME }}
