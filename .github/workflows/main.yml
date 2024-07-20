@@ -2,8 +2,8 @@ name: Zip and Update
 
 on:
   push:
-    #    tags:
-    #  - '*'
+    tags:
+      - '*'
 
 jobs:
   zip-and-update:
