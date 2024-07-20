@@ -33,10 +33,12 @@ jobs:
         ./archive.sh ${{ env.REPO_TAG_NAME }}
 
     - name: Install GitHub CLI
-      uses: actions/setup-gh-cli@v1
+      run: |
+        sudo apt-get install gh -y
 
     - name: Upload zip file to latest release
       run: |
-        gh release upload $(gh release list --limit 1 --json tagName -q '.[0].tagName') 8BP-${{ env.REPO_TAG_NAME }}.zip
+        latest_release_tag=$(gh release list --limit 1 --json tagName -q '.[0].tagName')
+        gh release upload "$latest_release_tag" "8BP-${{ env.REPO_TAG_NAME }}.zip"
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
