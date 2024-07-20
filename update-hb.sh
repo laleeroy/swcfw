@@ -40,6 +40,12 @@ Appstore() {
     cp $TMP_DIR/appstore.nro -d $BUILD_DIR/$HOMEBREW_DIR
 }
 
+Switchfin() {
+    download_url=$(curl -s https://api.github.com/repos/dragonflylee/switchfin/releases/latest | jq -r ".assets[6].browser_download_url")
+    curl -O -L $download_url --output-dir $TMP_DIR
+    cp $TMP_DIR/Switchfin.nro -d $BUILD_DIR/$HOMEBREW_DIR/Switchfin
+}
+
 Edizon() {
     download_url=$(curl -s https://api.github.com/repos/proferabg/Edizon-Overlay/releases/latest | jq -r ".assets[0].browser_download_url")
     curl -O -L $download_url --output-dir $TMP_DIR
@@ -92,6 +98,7 @@ ThemeInjector
 SaltyNX
 DBI
 Appstore
+Switchfin
 
 # Overlays
 Edizon
