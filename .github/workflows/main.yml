@@ -10,21 +10,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-
-    - name: Set up environment variables
-      run: echo "REPO_TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
-
     - name: Run update-hb script
       run: |
         ./update-hb.sh
         git config --global user.name '8Bit Gamer'
         git config --global user.email '8bitgamer2024@gmail.com'
-        git checkout atmosphere
         git add .
         git commit -m "HBs Update" || echo "No changes to commit"
         git push
+
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up environment variables
+      run: echo "REPO_TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
 
     - name: Run archive script
       run: |
