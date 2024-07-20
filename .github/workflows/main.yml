@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
+      with:
+        ref: main  # Change 'main' to the branch you want to work with
 
     - name: Set up environment variables
       run: echo "REPO_TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
@@ -21,10 +23,13 @@ jobs:
         ./update-hb.sh
         git config --global user.name '8Bit Gamer'
         git config --global user.email '8bitgamer2024@gmail.com'
-        git checkout atmosphere
+        
+        # Check out the branch
+        git checkout atmosphere  # Make sure you are on the correct branch
+        
         git add .
         git commit -m "HBs Update" || echo "No changes to commit"
-        git push
+        git push origin atmosphere  # Push to the correct branch
 
     - name: Run archive script
       run: |
