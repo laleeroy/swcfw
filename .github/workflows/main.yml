@@ -2,8 +2,8 @@ name: Zip and Update
 
 on:
   push:
-    #    tags:
-    #  - '*'
+    tags:
+      - '*'
 
 jobs:
   zip-and-update:
@@ -19,12 +19,12 @@ jobs:
     - name: Run update-hb script
       run: |
         ./update-hb.sh
-        git add .
         git config --global user.name '8Bit Gamer'
         git config --global user.email '8bitgamer2024@gmail.com'
+        git add updates.json
         git commit -m "HBs Update" || echo "No changes to commit"
-        git push"
+        git push
 
-      - name: Run archive script
-        run: |
-          ./archive.sh ${{ env.REPO_TAG_NAME }}
+    - name: Run archive script
+      run: |
+        ./archive.sh ${{ env.REPO_TAG_NAME }}
