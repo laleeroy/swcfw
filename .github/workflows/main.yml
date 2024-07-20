@@ -13,7 +13,7 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
       with:
-        ref: atmosphere  # Change 'main' to the branch you want to work with
+        ref: atmosphere  # Adjust to the branch you want to work with
 
     - name: Set up environment variables
       run: echo "REPO_TAG_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
@@ -23,14 +23,20 @@ jobs:
         ./update-hb.sh
         git config --global user.name '8Bit Gamer'
         git config --global user.email '8bitgamer2024@gmail.com'
-        
-        # Check out the branch
-        git checkout atmosphere  # Make sure you are on the correct branch
-        
+        git checkout atmosphere
         git add .
         git commit -m "HBs Update" || echo "No changes to commit"
-        git push origin atmosphere  # Push to the correct branch
+        git push origin atmosphere
 
     - name: Run archive script
       run: |
         ./archive.sh ${{ env.REPO_TAG_NAME }}
+
+    - name: Install GitHub CLI
+      uses: actions/setup-gh-cli@v1
+
+    - name: Upload zip file to latest release
+      run: |
+        gh release upload $(gh release list --limit 1 --json tagName -q '.[0].tagName') 8BP-${{ env.REPO_TAG_NAME }}.zip
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
