@@ -1,16 +1,34 @@
 {
     "cfws": {
         "Atmosphere": {
-            "8BP 1.7.1 - Atmosph\u00e8re 1.7.1 [Latest]": "https://github.com/Atmosphere-NX/Atmosphere/releases/download/1.7.1/atmosphere-1.7.1-master-39c201e37%2Bhbl-2.4.4%2Bhbmenu-3.6.0.zip",
-            "8BP Dinuguan  - Atmosph\u00e8re 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-d.zip",
-            "8BP Caldereta - Atmosph\u00e8re 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
-            "8BP Bulalo - Atmosph\u00e8re 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
-            "8BP Adobo - Atmosph\u00e8re 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
+            "8BP Estofado [Latest] - Atmosphere 1.7.1 & Hekate 6.2.1": "https://github.com/laleeroy/nxcfw/releases/download/Estofado/8BP-Estofado.zip",
+            "8BP Dinuguan - Atmosphere 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-d.zip",
+            "8BP Caldereta - Atmosphere 1.7.1 & Hekate 6.2.0": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-c.zip",
+            "8BP Bulalo - Atmosphere 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere-b.zip",
+            "8BP Adobo - Atmosphere 1.7.0 & Hekate 6.1.1": "https://github.com/laleeroy/swcfw/releases/download/AMS-1.7.0/swcfw-atmosphere.zip"
         }
     },
     "firmwares": {
         "Firmware 18.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/18.1.0/Firmware.18.1.0.zip",
         "Firmware 18.0.1": "https://github.com/THZoria/NX_Firmware/releases/download/18.0.1/Firmware.18.0.1.zip",
-        "Firmware 18.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/18.0.0/Firmware.18.0.0.zip"
+        "Firmware 18.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/18.0.0/Firmware.18.0.0.zip",
+        "Firmware 17.0.1": "https://github.com/THZoria/NX_Firmware/releases/download/17.0.1/Firmware.17.0.1.zip",
+        "Firmware 17.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/17.0.0/Firmware.17.0.0.zip",
+        "Firmware 16.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/16.1.0/Firmware.16.1.0.zip",
+        "Firmware 16.0.3": "https://github.com/THZoria/NX_Firmware/releases/download/16.0.3/Firmware.16.0.3.zip",
+        "Firmware 16.0.2": "https://github.com/THZoria/NX_Firmware/releases/download/16.0.2/Firmware.16.0.2.zip",
+        "Firmware 16.0.1": "https://github.com/THZoria/NX_Firmware/releases/download/16.0.1/Firmware.16.0.1.zip",
+        "Firmware 16.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/16.0.0/Firmware.16.0.0.zip",
+        "Firmware 15.0.1": "https://github.com/THZoria/NX_Firmware/releases/download/15.0.1/Firmware.15.0.1.zip",
+        "Firmware 15.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/15.0.0/Firmware.15.0.0.zip",
+        "Firmware 14.1.2": "https://github.com/THZoria/NX_Firmware/releases/download/14.1.2/Firmware.14.1.2.zip",
+        "Firmware 14.1.1": "https://github.com/THZoria/NX_Firmware/releases/download/14.1.1/Firmware.14.1.1.zip",
+        "Firmware 14.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/14.1.0/Firmware.14.1.0.zip",
+        "Firmware 14.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/14.0.0/Firmware.14.0.0.zip",
+        "Firmware 13.2.1": "https://github.com/THZoria/NX_Firmware/releases/download/13.2.1/Firmware.13.2.1.zip",
+        "Firmware 13.2.0": "https://github.com/THZoria/NX_Firmware/releases/download/13.2.0/Firmware.13.2.0.zip",
+        "Firmware 13.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/13.1.0/Firmware.13.1.0.zip",
+        "Firmware 13.0.0": "https://github.com/THZoria/NX_Firmware/releases/download/13.0.0/Firmware.13.0.0.zip",
+        "Firmware 12.1.0": "https://github.com/THZoria/NX_Firmware/releases/download/12.1.0/Firmware.12.1.0.zip"
     }
 }
